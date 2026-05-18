@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# 🧠 QuizMaster — React Quiz App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A fully interactive quiz application built with React for a 2nd semester project.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- **6 Categories** — React/JS, Science, History, Mathematics, General Knowledge, Technology
+- **3 Difficulty Levels** — Easy (30s, 1pt), Medium (20s, 2pt), Hard (12s, 3pt)
+- **Countdown Timer** — per question, turns red when time is low
+- **🔥 Streak System** — consecutive correct answers earn bonus points
+- **⚡ 50/50 Lifeline** — eliminates 2 wrong options
+- **⏭ Skip Lifeline** — skip one question without penalty
+- **🔊 Sound Effects** — correct, wrong, tick, victory sounds via Web Audio API
+- **✕ Mid-Game Exit Button** — quit anytime with a confirmation modal showing current progress
+- **🏅 Persistent Leaderboard** — top 10 scores saved via localStorage
+- **🎉 Confetti** — fires on a new best score
+- **📋 Answer Review** — full review of every question after the quiz
+- **Responsive UI** — works on mobile and desktop
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+- **React** (Functional components, hooks)
+- **useState** — all UI state management
+- **useEffect** — countdown timer logic
+- **useRef** — timer interval reference
+- **useCallback** — memoized timer stop function
+- **localStorage** — leaderboard persistence
+- **Web Audio API** — sound effects (no external library)
+- **CSS** — custom animations, transitions, gradients
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📁 Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+src/
+├── App.js                  # Root component, screen routing
+├── App.css                 # Global styles
+├── data/
+│   └── questions.js        # All quiz questions (6 categories × 3 levels × 5 questions)
+└── components/
+    ├── Home.jsx             # Home screen (name, category, difficulty, options)
+    ├── Home.css
+    ├── Quiz.jsx             # Quiz screen (questions, timer, lifelines, exit modal)
+    ├── Quiz.css
+    ├── Results.jsx          # Results screen (score ring, stats, leaderboard, review)
+    └── Results.css
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ▶️ How to Run
 
-### `npm run eject`
+```bash
+# 1. Install dependencies
+npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# 2. Start the development server
+npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# 3. Open in browser
+http://localhost:3000
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🌐 Deployment
 
-## Learn More
+Deployed on Vercel: [your-vercel-link-here]
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📌 React Concepts Used
 
-### Code Splitting
+| Concept | Where Used |
+|---|---|
+| useState | All state: score, timer, screen, answers |
+| useEffect | Countdown timer that resets each question |
+| useRef | Holding interval reference without re-render |
+| useCallback | Stable stopTimer function |
+| Props | Passing config & callbacks between screens |
+| Conditional rendering | Switching between Home / Quiz / Results |
+| Component composition | App → Home/Quiz/Results → sub-components |
+| localStorage | Leaderboard persistence across sessions |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*Built with ❤️ using React*
