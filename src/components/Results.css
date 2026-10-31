@@ -1,0 +1,64 @@
+.results-screen {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 50% 0%, rgba(124,58,237,.2), transparent 60%), #0a0a14;
+  position: relative;
+}
+.results-wrap { max-width: 500px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+
+/* Confetti */
+.confetti-wrap { position: fixed; inset: 0; pointer-events: none; z-index: 999; }
+.confetti-piece { position: absolute; border-radius: 2px; top: -10px; animation: confetti-fall 2.5s ease-in forwards; }
+@keyframes confetti-fall { 0%{transform:translateY(-20px) rotate(0deg);opacity:1} 100%{transform:translateY(100vh) rotate(720deg);opacity:0} }
+
+/* Hero */
+.res-hero { text-align: center; padding: 1rem 0 .5rem; }
+.res-emoji { font-size: 3.5rem; display: block; animation: bounce .6s ease; }
+@keyframes bounce { 0%{transform:scale(0)} 60%{transform:scale(1.2)} 100%{transform:scale(1)} }
+.res-title { font-size: 1.7rem; font-weight: 800; color: #f3f4f6; margin-top: .5rem; }
+.res-sub { font-size: .85rem; color: #6b7280; margin-top: .25rem; }
+
+/* Score ring */
+.score-ring-wrap { position: relative; width: 140px; height: 140px; margin: 1.25rem auto; }
+.score-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); text-align: center; }
+.score-num { font-size: 2rem; font-weight: 800; color: #f3f4f6; }
+.score-den { font-size: .75rem; color: #6b7280; }
+.new-best { display: inline-block; background: linear-gradient(135deg, #f59e0b, #ec4899); color: #fff; font-size: .7rem; font-weight: 700; padding: .2rem .6rem; border-radius: 99px; margin-top: .3rem; animation: pulse 1s ease infinite alternate; text-transform: uppercase; letter-spacing: .06em; }
+@keyframes pulse { from{opacity:.8} to{opacity:1;transform:scale(1.05)} }
+
+/* Stats grid */
+.stats-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: .6rem; margin: .75rem 0; }
+.stat-box { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: 14px; padding: .9rem; text-align: center; }
+.stat-val { font-size: 1.5rem; font-weight: 700; margin-bottom: .15rem; }
+.stat-lbl { font-size: .68rem; color: #6b7280; text-transform: uppercase; letter-spacing: .07em; }
+
+/* Leaderboard */
+.leaderboard { margin: 1rem 0; }
+.lb-title { font-size: .7rem; color: #6b7280; text-transform: uppercase; letter-spacing: .09em; margin-bottom: .5rem; }
+.lb-row { display: flex; align-items: center; gap: .75rem; padding: .65rem .9rem; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: 11px; margin-bottom: .4rem; font-size: .85rem; }
+.lb-row.highlight { background: rgba(124,58,237,.1); border-color: rgba(124,58,237,.25); }
+.lb-rank { width: 20px; text-align: center; font-weight: 700; color: #6b7280; }
+.lb-rank.gold { color: #f59e0b; }
+.lb-rank.silver { color: #9ca3af; }
+.lb-rank.bronze { color: #cd7c44; }
+.lb-name { flex: 1; font-weight: 500; color: #f3f4f6; }
+.lb-meta { font-size: .7rem; color: #6b7280; }
+.lb-score { color: #a78bfa; font-weight: 600; }
+
+/* Review */
+.review-section { margin: 1rem 0; }
+.review-toggle { width: 100%; padding: .7rem; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.09); border-radius: 12px; color: #9ca3af; cursor: pointer; font-size: .85rem; margin-bottom: .6rem; transition: background .2s; }
+.review-toggle:hover { background: rgba(255,255,255,.09); }
+.review-item { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); border-radius: 12px; padding: .85rem; margin-bottom: .5rem; font-size: .82rem; }
+.ri-q { color: #d1d5db; line-height: 1.5; margin-bottom: .45rem; }
+.ri-tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+.ri-tag { padding: .18rem .55rem; border-radius: 6px; font-size: .72rem; font-weight: 500; }
+.ri-y { background: rgba(16,185,129,.12); color: #34d399; }
+.ri-n { background: rgba(239,68,68,.1); color: #f87171; }
+.ri-a { background: rgba(96,165,250,.1); color: #93c5fd; }
+
+/* Actions */
+.action-row { display: flex; gap: .6rem; margin-top: 1.25rem; }
+.action-btn { flex: 1; padding: .85rem; border-radius: 13px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.06); color: #fff; font-size: .9rem; cursor: pointer; font-weight: 500; transition: all .2s; }
+.action-btn:hover { background: rgba(255,255,255,.12); }
+.primary-btn { background: linear-gradient(135deg, #7c3aed, #2563eb); border: none; font-weight: 600; }
+.primary-btn:hover { opacity: .9; }
